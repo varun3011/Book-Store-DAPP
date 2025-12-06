@@ -1,0 +1,125 @@
+================================================================================
+                    BOOK STORE DECENTRALIZED APPLICATION (DApp)
+================================================================================
+
+PROJECT OVERVIEW
+----------------
+A decentralized book marketplace built on Ethereum blockchain where users can:
+- Buy books from the store
+- Sell their purchased books to other users
+- Track ownership and purchase history
+
+TECHNOLOGY STACK
+----------------
+- Frontend: Next.js 13, React, TypeScript, Tailwind CSS, DaisyUI
+- Blockchain: Solidity (Smart Contracts), Hardhat (Development)
+- Wallet: MetaMask (Ethereum wallet integration)
+- Network: Local Hardhat blockchain (localhost:8545)
+
+MAIN FUNCTIONALITIES
+--------------------
+
+1. ADD BOOKS (Account #1 Only)
+   - Only Account #1 can add new books to the store
+   - Requires: Title, Author, Price (ETH), Stock quantity, Image URL
+   - Books are stored on the blockchain permanently
+
+2. PURCHASE FROM STORE
+   - Any user can buy books directly from the store
+   - Payment in ETH (automatic calculation: price × quantity)
+   - Stock decreases automatically
+   - Ownership is tracked on blockchain
+
+3. PEER-TO-PEER MARKETPLACE
+   - Users can list their purchased books for sale
+   - Set custom price (can be different from original price)
+   - Other users can buy from these listings
+   - Ownership transfers automatically on purchase
+
+4. USER PROFILE
+   - View all owned books
+   - See purchase history and prices paid
+   - Track active listings
+   - Statistics: Total books owned, total value
+
+5. BOOK MANAGEMENT
+   - List books for sale
+   - Update listing price/quantity
+   - Cancel listings
+   - View marketplace listings
+
+HOW IT WORKS (MAIN LOGIC)
+--------------------------
+
+SMART CONTRACT (BookStore.sol):
+- Stores all book data on blockchain (immutable)
+- Tracks ownership: bookId → address → quantity owned
+- Manages listings: bookId → seller → listing details
+- Records purchase history for each book
+- Enforces rules: Only Account #1 can add books
+
+OWNERSHIP TRACKING:
+- When user buys from store: ownership increases
+- When user sells to another: ownership decreases
+- Each transaction is recorded on blockchain
+- Purchase price is tracked per user per book
+
+MARKETPLACE LOGIC:
+1. User lists book → Creates listing with price & quantity
+2. Another user buys → Ownership transfers, payment sent to seller
+3. Listing quantity decreases (or removed if all sold)
+4. Original listing price is used (not store price)
+
+FRONTEND LOGIC:
+- Connects to MetaMask wallet
+- Reads data from smart contract
+- Displays books in card-based UI
+- Handles transactions through MetaMask
+- Auto-refreshes after transactions
+
+KEY FEATURES
+------------
+✓ Decentralized (no central server, data on blockchain)
+✓ Ownership tracking (know who owns what)
+✓ Peer-to-peer trading (users sell to each other)
+✓ Price history (tracks what users paid)
+✓ Image support (book covers via URLs)
+✓ Real-time updates (automatic refresh after transactions)
+
+SECURITY FEATURES
+-----------------
+- Only Account #1 can add books (access control)
+- Ownership verification before listing
+- Stock validation before purchase
+- Payment verification (sufficient funds check)
+- Automatic refunds for excess payments
+
+DATA STORAGE
+------------
+All data stored on blockchain:
+- Book catalog (title, author, price, stock, image)
+- Ownership records (who owns how many copies)
+- Purchase history (all transactions)
+- Active listings (marketplace offers)
+- Purchase prices (what each user paid)
+
+NETWORK CONFIGURATION
+---------------------
+- Network: Hardhat Local
+- RPC URL: http://127.0.0.1:8545
+- Chain ID: 31337
+- Currency: ETH (test tokens)
+
+QUICK START
+-----------
+1. Start Hardhat node: npx hardhat node
+2. Deploy contract: npx hardhat run scripts/deploy.ts --network localhost
+3. Start frontend: npm run dev
+4. Open browser: http://localhost:3000
+5. Connect MetaMask to Hardhat network
+6. Use Account #1 to add books
+
+================================================================================
+                        END OF PROJECT DOCUMENTATION
+================================================================================
+
