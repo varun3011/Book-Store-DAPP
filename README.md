@@ -225,7 +225,3 @@ This project is open source and available for educational purposes.
 - Uses Ethers.js for blockchain interactions
 - Styled with Tailwind CSS and DaisyUI
 
----
-
-**Note**: This is a development project. For production use, deploy to a testnet or mainnet and update the contract address accordingly.
-
