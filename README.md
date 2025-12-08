@@ -216,10 +216,27 @@ This project is open source and available for educational purposes.
 
 ## 👤 Author
 
-**varun3011**
+1. ARYAN J PANDIT 
+    Email:- aryanpandit1718@csu.fullerton.edu
+    CWID:- 815625769
+2. Dhrit T Patel
+     Email:-dhritpatel2001@csu.fullerton.edu
+     CWID:- 840720064
+3. DEV S VYAS
+     Email:-devvyas16@csu.fullerton.edu
+     CWID:-842783672
+4. VARUN PATEL
+      Email:-varun3011@csu.fullerton.edu
+      CWID:-845405406
+   
+
+
+
+
+
 - GitHub: [@varun3011](https://github.com/varun3011)
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with Hardhat and Next.js
 - Uses Ethers.js for blockchain interactions
