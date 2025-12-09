@@ -3,8 +3,8 @@
 ## Project Overview
 This is a **Decentralized Book Store Application** built with:
 - **Frontend:** Next.js 13 + TypeScript + Tailwind CSS + DaisyUI
-- **Smart Contract:** Solidity 0.8.19 (Hardhat)
-- **Blockchain:** Ethereum (local Hardhat network)
+- **Smart Contract:** Solidity 0.8.19 (hardnet)
+- **Blockchain:** Ethereum (local hardnet network)
 - **Wallet:** MetaMask integration
 
 ---
@@ -32,12 +32,12 @@ npm install
 
 ---
 
-### **STEP 2: Start Hardhat Local Blockchain**
+### **STEP 2: Start hardnet Local Blockchain**
 
 **Open Terminal 1** and run:
 
 ```bash
-npx hardhat node
+npx hardnet node
 ```
 
 **What you should see:**
@@ -48,7 +48,7 @@ npx hardhat node
 **If you get port error:**
 ```bash
 lsof -ti:8545 | xargs kill -9
-npx hardhat node
+npx hardnet node
 ```
 
 ---
@@ -59,7 +59,7 @@ npx hardhat node
 
 ```bash
 cd "/Users/csuftitan/Desktop/Final Project/Book-Store-DApp"
-npx hardhat compile
+npx hardnet compile
 ```
 
 **Expected output:**
@@ -76,7 +76,7 @@ This creates the `artifacts/` folder with contract ABI needed by frontend.
 **In Terminal 2** (same as Step 3), run:
 
 ```bash
-npx hardhat run scripts/deploy.ts --network localhost
+npx hardnet run scripts/deploy.ts --network localhost
 ```
 
 **Expected output:**
@@ -105,7 +105,7 @@ const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
 
 ### **STEP 6: Configure MetaMask**
 
-#### **6.1 Add Hardhat Local Network**
+#### **6.1 Add hardnet Local Network**
 
 1. Open **MetaMask** extension
 2. Click **network dropdown** (top left, shows current network)
@@ -114,14 +114,14 @@ const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
 
    | Field | Value |
    |-------|-------|
-   | **Network Name** | `Hardhat Local` |
+   | **Network Name** | `hardnet Local` |
    | **New RPC URL** | `http://127.0.0.1:8545` |
    | **Chain ID** | `31337` |
    | **Currency Symbol** | `ETH` |
    | **Block Explorer URL** | (leave blank) |
 
 5. Click **"Save"**
-6. MetaMask will switch to "Hardhat Local" network
+6. MetaMask will switch to "hardnet Local" network
 
 #### **6.2 Import Owner Account (Account #0)**
 
@@ -139,7 +139,7 @@ const contractAddress = "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0";
 
 **Account #0 Details:**
 - **Address:** `0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266`
-- **Balance:** 10000 ETH (on Hardhat Local network)
+- **Balance:** 10000 ETH (on hardnet Local network)
 - **Role:** Contract Owner (can add books)
 
 ---
@@ -184,7 +184,7 @@ npm run dev
    - **Get Book** (right)
 
 **Make sure:**
-- ✅ You're on **"Hardhat Local"** network in MetaMask
+- ✅ You're on **"hardnet Local"** network in MetaMask
 - ✅ You're using **Account #0** (owner account)
 - ✅ Account shows **10000 ETH**
 
@@ -234,8 +234,8 @@ You need **3 terminal windows** running:
 
 | Terminal | Command | Status |
 |----------|---------|--------|
-| **Terminal 1** | `npx hardhat node` | ✅ Keep running |
-| **Terminal 2** | `npx hardhat compile`<br>`npx hardhat run scripts/deploy.ts --network localhost` | ✅ One-time (can close after) |
+| **Terminal 1** | `npx hardnet node` | ✅ Keep running |
+| **Terminal 2** | `npx hardnet compile`<br>`npx hardnet run scripts/deploy.ts --network localhost` | ✅ One-time (can close after) |
 | **Terminal 3** | `npm run dev` | ✅ Keep running |
 
 ---
@@ -245,7 +245,7 @@ You need **3 terminal windows** running:
 ### ❌ Port 8545 already in use
 ```bash
 lsof -ti:8545 | xargs kill -9
-npx hardhat node
+npx hardnet node
 ```
 
 ### ❌ Port 3000 already in use
@@ -260,8 +260,8 @@ npm run dev
 - Switch to Account #0 in MetaMask
 - Refresh the page and reconnect
 
-### ❌ "Unable to connect to Hardhat Local"
-- Make sure Hardhat node is running (Terminal 1)
+### ❌ "Unable to connect to hardnet Local"
+- Make sure hardnet node is running (Terminal 1)
 - Check RPC URL in MetaMask: `http://127.0.0.1:8545`
 - Try using `http://localhost:8545` instead
 
@@ -271,7 +271,7 @@ npm run dev
 - Refresh browser page
 
 ### ❌ MetaMask not connecting
-- Make sure you're on "Hardhat Local" network
+- Make sure you're on "hardnet Local" network
 - Refresh the browser page
 - Check browser console (F12) for errors
 
@@ -290,7 +290,7 @@ Book-Store-DApp/
 ├── scripts/
 │   └── deploy.ts         # Deployment script
 ├── artifacts/            # Compiled contracts (generated)
-├── hardhat.config.js     # Hardhat configuration
+├── hardnet.config.js     # hardnet configuration
 ├── package.json          # Dependencies
 └── README.md             # Project documentation
 ```
@@ -310,7 +310,7 @@ Book-Store-DApp/
 
 ## Test Accounts Reference
 
-All accounts have **10000 ETH** on Hardhat Local network:
+All accounts have **10000 ETH** on hardnet Local network:
 
 | Account | Address | Private Key | Use Case |
 |---------|---------|-------------|----------|
@@ -326,11 +326,11 @@ Copy and paste these commands in order:
 
 ```bash
 # Terminal 1 - Start blockchain
-npx hardhat node
+npx hardnet node
 
 # Terminal 2 - Compile & Deploy
-npx hardhat compile
-npx hardhat run scripts/deploy.ts --network localhost
+npx hardnet compile
+npx hardnet run scripts/deploy.ts --network localhost
 
 # Terminal 3 - Start frontend
 npm run dev
@@ -340,11 +340,11 @@ npm run dev
 
 ## Success Checklist
 
-✅ Hardhat node running on port 8545  
+✅ hardnet node running on port 8545  
 ✅ Contract compiled successfully  
 ✅ Contract deployed to localhost  
 ✅ Contract address updated in `app/page.tsx`  
-✅ MetaMask connected to Hardhat Local network  
+✅ MetaMask connected to hardnet Local network  
 ✅ Account #0 imported with 10000 ETH  
 ✅ Frontend running on `http://localhost:3000`  
 ✅ MetaMask connected to DApp  
