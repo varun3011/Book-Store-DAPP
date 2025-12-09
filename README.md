@@ -1,6 +1,6 @@
 # 📚 BookVerse - Decentralized Book Store DApp
 
-A modern, decentralized book marketplace built on Ethereum blockchain using Next.js, Hardhat, and MetaMask. BookVerse allows users to buy, sell, and manage books in a peer-to-peer marketplace with full ownership tracking and profit analytics.
+A modern, decentralized book marketplace built on Ethereum blockchain using Next.js, Hardnet, and MetaMask. BookVerse allows users to buy, sell, and manage books in a peer-to-peer marketplace with full ownership tracking and profit analytics.
 
 ## 🌟 Features
 
